@@ -12,7 +12,7 @@ ENV PYTHONUNBUFFERED=1
 RUN pip install --no-cache-dir uv
 
 # 2. Copy backend configuration files first (for caching layers)
-COPY backend/pyproject.toml ./backend/
+COPY backend/pyproject.toml backend/uv.lock ./backend/
 
 # 3. Change directory to the backend where pyproject.toml lives
 WORKDIR /app/backend
